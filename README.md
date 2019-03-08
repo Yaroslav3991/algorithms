@@ -2,4 +2,4 @@
 Implementation of popular algorithms
 
 ## Tasks:
-We create with Anт portfolio and improve knowledge of algorithms.
+We create with Ann portfolio and improve knowledge of algorithms.
