@@ -1,5 +1,5 @@
-# algorithms
+# Algorithms
 Implementation of popular algorithms
 
-##Tasks:
+## Tasks:
 We create with Anт portfolio and improve knowledge of algorithms.
