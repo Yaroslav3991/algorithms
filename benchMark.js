@@ -17,10 +17,12 @@ let getRandomArrays = (arraysLength, arraysNumber) => {
 };
 
 //BenchMark, speed check
-let benchMark = (callback, arg) => {
+let benchMark = (callback, arrays) => {
   let start = new Date();
 
-  callback(arg);
+  arrays.forEach(array => callback(array));
 
-  return new Date() - start;
+  console.log(`${(new Date() - start) / 1000} sec`);
+
+  return (new Date() - start) / 1000;
 };
