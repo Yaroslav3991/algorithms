@@ -1,5 +1,6 @@
 let bubbleSort = require('./bubble');
 let shakerSort = require('./shaker');
+let gnomeSort = require('./gnome');
 
 //get test arrays any length
 let getRandomArrays = (arraysLength, arraysNumber) => {
@@ -17,6 +18,9 @@ let getRandomArrays = (arraysLength, arraysNumber) => {
   return list;
 };
 
+//get copy arrays
+let getCopy = arrays => arrays.map(array => [...array]);
+
 //BenchMark, speed check
 let benchMark = (callback, arrays) => {
   let start = new Date();
@@ -28,9 +32,12 @@ let benchMark = (callback, arrays) => {
   return (new Date() - start) / 1000;
 };
 
-let arraysLength = 1000;
+let arraysLength = 10000;
 let arraysNumbers = 1;
 let testArrays = getRandomArrays(arraysLength, arraysNumbers);
 
-benchMark(bubbleSort, testArrays);
-benchMark(shakerSort, testArrays);
+benchMark(bubbleSort, getCopy(testArrays));
+
+benchMark(shakerSort, getCopy(testArrays));
+
+benchMark(gnomeSort, getCopy(testArrays));
