@@ -1,4 +1,5 @@
 let bubbleSort = require('./bubble');
+let shakerSort = require('./shaker');
 
 //get test arrays any length
 let getRandomArrays = (arraysLength, arraysNumber) => {
@@ -26,3 +27,10 @@ let benchMark = (callback, arrays) => {
 
   return (new Date() - start) / 1000;
 };
+
+let arraysLength = 1000;
+let arraysNumbers = 1;
+let testArrays = getRandomArrays(arraysLength, arraysNumbers);
+
+benchMark(bubbleSort, testArrays);
+benchMark(shakerSort, testArrays);
