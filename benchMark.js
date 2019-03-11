@@ -36,7 +36,8 @@ let arraysLength = 10000;
 let arraysNumbers = 1;
 let testArrays = getRandomArrays(arraysLength, arraysNumbers);
 
-benchMark(bubbleSort, getCopy(testArrays));
+benchMark(bubbleSort.bubbleSort, getCopy(testArrays));
+benchMark(bubbleSort.bubbleSortWithoutOptimization, getCopy(testArrays));
 
 benchMark(shakerSort, getCopy(testArrays));
 

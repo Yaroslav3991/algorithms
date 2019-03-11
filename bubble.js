@@ -3,6 +3,26 @@ let bubbleSort = array => {
   let arrayLength = array.length - 1;
 
   for (let j = 0; j < arrayLength; j++) {
+    let isSwap = false;
+
+    for (let i = 0; i < arrayLength - j; i++) {
+      if (array[i] > array[i + 1]) {
+        let temp = array[i + 1];
+
+        array[i + 1] = array[i];
+        array[i] = temp;
+        isSwap = true;
+      }
+    }
+
+    if (!isSwap) break;
+  }
+};
+
+let bubbleSortWithoutOptimization = array => {
+  let arrayLength = array.length - 1;
+
+  for (let j = 0; j < arrayLength; j++) {
     for (let i = 0; i < arrayLength - j; i++) {
       if (array[i] > array[i + 1]) {
         let temp = array[i + 1];
@@ -14,4 +34,4 @@ let bubbleSort = array => {
   }
 };
 
-module.exports = bubbleSort;
+module.exports = { bubbleSort, bubbleSortWithoutOptimization };
